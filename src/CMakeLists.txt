@@ -7,3 +7,8 @@ add_subdirectory(async_threads_cpp)
 add_library(${PROJECT_NAME} ${CMAKE_CURRENT_LIST_DIR}/async_threads_module.F90)
 target_link_libraries(${PROJECT_NAME} PRIVATE async_threads_cpp)
 target_include_directories(${PROJECT_NAME} PUBLIC ${CMAKE_CURRENT_BINARY_DIR})
+
+option(DISABLE_MULTITHREADING "disable asynchronous operations" OFF)
+if(${DISABLE_MULTITHREADING})
+   target_compile_definitions(${PROJECT_NAME} PRIVATE DISABLE_MULTITHREADING)
+endif()
