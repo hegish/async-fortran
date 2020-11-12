@@ -1,3 +1,4 @@
+! contact: Jan Hegewald <jan.hegewald@awi.de> Alfred Wegener Institute
 module async_threads_module
   implicit none  
   public thread_type

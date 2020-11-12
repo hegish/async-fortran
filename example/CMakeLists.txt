@@ -1,3 +1,4 @@
+# contact: Jan Hegewald <jan.hegewald@awi.de> Alfred Wegener Institute
 cmake_minimum_required(VERSION 3.4)
 
 project(asyncfortranexample CXX C Fortran)

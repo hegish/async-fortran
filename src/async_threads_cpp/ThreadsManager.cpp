@@ -1,3 +1,4 @@
+// contact: Jan Hegewald <jan.hegewald@awi.de> Alfred Wegener Institute
 #include "ThreadsManager.h"
 #include <stdexcept>
 #include <string>

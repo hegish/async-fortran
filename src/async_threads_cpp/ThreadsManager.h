@@ -1,3 +1,4 @@
+// contact: Jan Hegewald <jan.hegewald@awi.de> Alfred Wegener Institute
 #ifndef ThreadsManager_C6DCC9D9_E462_4BAF_8C3B_00B843F08A75
 #define ThreadsManager_C6DCC9D9_E462_4BAF_8C3B_00B843F08A75
 
