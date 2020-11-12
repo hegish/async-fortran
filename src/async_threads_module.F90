@@ -6,7 +6,7 @@ module async_threads_module
   
 
   abstract interface
-    subroutine callback_interface(index_argument)
+    subroutine worker_interface(index_argument)
       integer, intent(in) :: index_argument
     end subroutine
   end interface
@@ -15,7 +15,7 @@ module async_threads_module
   type thread_type
     private
     integer :: idx = 0
-    procedure(callback_interface), nopass, pointer :: run_ptr => null()
+    procedure(worker_interface), nopass, pointer :: run_ptr => null()
     integer :: run_arg = 0
     logical :: with_real_threads = .true.
   contains
@@ -35,9 +35,9 @@ module async_threads_module
 contains
 
 
-  subroutine initialize(this, thread_callback_procedure, procedure_argument)
+  subroutine initialize(this, thread_worker_procedure, procedure_argument)
     class(thread_type), target :: this
-    procedure(callback_interface) thread_callback_procedure
+    procedure(worker_interface) thread_worker_procedure
     integer procedure_argument
     ! EO args
     type(wrapper_type), allocatable :: tmparr(:)
@@ -53,7 +53,7 @@ contains
     threads(size(threads))%ptr => this
 
     this%idx = size(threads)
-    this%run_ptr => thread_callback_procedure
+    this%run_ptr => thread_worker_procedure
     this%run_arg = procedure_argument
     
 #ifdef DISABLE_MULTITHREADING
