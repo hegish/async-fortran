@@ -1,7 +1,7 @@
 # contact: Jan Hegewald <jan.hegewald@awi.de> Alfred Wegener Institute
 cmake_minimum_required(VERSION 3.4)
 
-project(asyncfortranexample CXX C Fortran)
+project(async_fortran_example_simple CXX C Fortran)
 
 add_subdirectory(../src ${PROJECT_BINARY_DIR}/async_threads_fortran)
 
