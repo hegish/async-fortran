@@ -13,7 +13,7 @@ For example:
 
     mkdir build
     cd build
-    cmake async_fortran/example_simple
+    cmake ../example_simple
     make
 
 run:
@@ -22,7 +22,7 @@ run:
 
 alternative build without multithreading:
 
-    cmake -DDISABLE_MULTITHREADING=ON async_fortran/example_simple
+    cmake -DDISABLE_MULTITHREADING=ON ../example_simple
 
 
 Credits
